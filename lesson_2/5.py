@@ -12,9 +12,11 @@ class ItemDiscount:
         self.__name = name
         self.__price = price
 
+    @property
     def get_price(self):
         return self.__price
 
+    @property
     def get_name(self):
         return self.__name
 
@@ -25,20 +27,23 @@ class ItemDiscount:
 class ItemDiscountReportName(ItemDiscount):
 
     def get_info(self):
-        print(self.get_name())
+        print(self.get_name)
 
 
 class ItemDiscountReportPrice(ItemDiscount):
 
     def get_info(self):
-        print(self.get_price())
+        print(self.get_price)
 
 
+print('Option 1')
 item_1 = ItemDiscountReportName('диван', 10000)
 item_1.get_info()
 
 item_2 = ItemDiscountReportPrice('стол', 3500)
 item_2.get_info()
+
+print('Option 2')
 
 
 def show_info(obj):
@@ -48,5 +53,6 @@ def show_info(obj):
 show_info(item_1)
 show_info(item_2)
 
+print('Option 3')
 for i in [item_1, item_2]:
     i.get_info()

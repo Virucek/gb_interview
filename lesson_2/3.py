@@ -11,9 +11,11 @@ class ItemDiscount:
         self.__name = name
         self.__price = price
 
+    @property
     def get_price(self):
         return self.__price
 
+    @property
     def get_name(self):
         return self.__name
 
@@ -24,10 +26,13 @@ class ItemDiscount:
 class ItemDiscountReport(ItemDiscount):
 
     def get_parent_data(self):
-        return f'{self.get_name()} - {self.get_price()} руб.'
+        return f'{self.get_name} - {self.get_price} руб.'
 
 
-test = ItemDiscountReport('диван', 10000)
-print(test.get_parent_data())
-test.set_price(20000)
-print(test.get_parent_data())
+test_child = ItemDiscountReport('диван', 10000)
+test_child.set_price(20000)
+print(f'child class new price - {test_child.get_parent_data()}')
+
+test_parent = ItemDiscount('диван', 10000)
+test_parent.set_price(17000)
+print(f'parent class new price - {test_parent.get_price} руб.')

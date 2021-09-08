@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-light rounded">
+    <div class="font-weight-bold text-center py-3"><span class="js-create-good btn btn-light btn-lg" data-url="{% url 'goods:goods_create' %}">Добавить товар</span></div>
+    {% include 'mainapp/include/partial_goods_list.html' %}
+    <div class="modal fade" id="modal-good" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

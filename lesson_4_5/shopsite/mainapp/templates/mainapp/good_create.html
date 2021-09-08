@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block content %}
+    <div class="h5 modal-header">
+        <h5 class="modal-title">Добавление нового товара</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+        <form class="form-horizontal js-good-create-form" method="post" action="{% url 'goods:goods_create' %}">
+            {% csrf_token %}
+            <div class="modal-body">
+            {% include 'form.html' %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                <button class="btn btn-primary" type="submit">Сохранить</button>
+            </div>
+        </form>
+{% endblock %}

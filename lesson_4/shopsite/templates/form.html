@@ -1,0 +1,7 @@
+{% include 'base.html' %}
+{% load static %}
+{% for field in form %}
+    <div class="center-div">
+        {{ field.label }}: {{ field }}
+    </div>
+{% endfor %}

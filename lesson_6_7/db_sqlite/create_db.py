@@ -91,7 +91,14 @@ def test_fetch(conn_):
     print('DB tested successfully!')
 
 
-conn = sqlite3.connect(db_path)
-with conn:
-    create_db(conn)
-    test_db(conn)
+if __name__ == '__main__':
+    conn = sqlite3.connect(db_path)
+    with conn:
+        create_db(conn)
+        test_db(conn)
+
+
+def create_db_connection(db_path_):
+    conn_ = sqlite3.connect(db_path_)
+    create_db(conn_)
+    return conn_
